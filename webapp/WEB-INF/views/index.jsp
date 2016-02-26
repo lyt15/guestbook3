@@ -11,15 +11,14 @@
 <title>방명록</title>
 </head>
 <body>
-	<form action="/guestbook2/gb" method="post">
-	<input type="hidden" name="a" value="add">
+	<form action="/guestbook3/add" method="post">
 	<table border=1 width=500>
 		<tr>
 			<td>이름</td><td><input type="text" name="name"></td>
 			<td>비밀번호</td><td><input type="password" name="password"></td>
 		</tr>
 		<tr>
-			<td colspan=4><textarea name="content" cols=60 rows=5></textarea></td>
+			<td colspan=4><textarea name="message" cols=60 rows=5></textarea></td>
 		</tr>
 		<tr>
 			<td colspan=4 align=right><input type="submit" VALUE=" 확인 "></td>
@@ -35,7 +34,7 @@
 				<td>[${count-status.index }]</td>
 				<td>${vo.name }</td>
 				<td>${vo.regDate }</td>
-				<td><a href="/guestbook2/gb?a=deleteform&no=${vo.no }">삭제</a></td>
+				<td><a href="/guestbook3/deleteform/${vo.no }">삭제</a></td>
 			</tr>
 			<tr>
 				<td colspan=4>
